@@ -10,8 +10,9 @@
             text-align: center;
             font-style: italic;
             position: sticky;
+        
         }
-        h1{
+        h2{
             text-align: center;
             font-style: italic;
         }
@@ -35,11 +36,11 @@
         }
 
         nav button {
-            background-color: #007BFF;
+            background-color: gray;
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 20px 32px;
+            border-radius: 6px;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -52,7 +53,34 @@
             padding: 20px;
             text-align: center;
         }
-
+        section:nth-child(2){
+            background-color: #ccc;
+            background-size: cover;
+            text-align: center;
+            container-type: inline-size;
+            min-height: 100vh;
+            display: flex;
+            
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .container button {
+            background-color: burlywood;
+            color: white;
+            border: none;
+            padding: 45px 84px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
         footer {
             background-color: #333;
             color: white;
