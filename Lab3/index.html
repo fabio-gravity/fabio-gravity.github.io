@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-        <link rel="stylesheet" href="Styles.css" />
-    </head>
-    <body>
-        <header>
-            <h1>Cidade DE Lisboa!!!</h1>
-        </header>
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-            <nav class="flex-container">
-                <a href="index.html"><button>Home</button></a>
-                <a href="local.html"><button>Local</button></a>
-                <a href="multimedia.html"><button>Multimedia</button></a>
-                <a href="info.html"><button>Info</button></a>
-            </nav>
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cidade</title>
+    <link rel="stylesheet" href="Styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cidade de Lisboa!!!</h1>
+      <nav class="flex-container" aria-label="Navegação principal">
+        <a href="index.html" aria-current="page"><button type="button">Home</button></a>
+        <a href="local.html"><button type="button">Local</button></a>
+        <a href="multimedia.html"><button type="button">Multimédia</button></a>
+        <a href="info.html"><button type="button">Info</button></a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <h2>Home</h2>
+        <p>A minha cidade é muito linda!!!</p>
+        <p>Lisboa mistura história, cultura e um rio cheio de luz.</p>
+      </section>
+      <section class="content-grid" aria-label="Outros destaques sobre Lisboa">
+        <article>
+          <h3>História e tradição</h3>
+          <p>A Baixa Pombalina, reconstruída após 1755, mostra como a cidade renasceu.</p>
+        </article>
+        <article>
+          <h3>Rio Tejo</h3>
+          <p>O Tejo acompanha Lisboa com uma luz única, perfeita para passeios ao entardecer.</p>
+        </article>
+        <article>
+          <h3>Bairros típicos</h3>
+          <p>Alfama e Bairro Alto mantêm o fado e as ruas estreitas cheias de vida.</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>DIW 2025</p>
+    </footer>
+  </body>
 </html>

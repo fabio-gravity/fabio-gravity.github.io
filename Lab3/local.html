@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>local</title>
-        <link rel="stylesheet" href="Styles.css" />
-    </head>
-    <body>
-        <header>
-            <h1>meu local </h1>
-        </header>
-        <main>
-             <nav class="flex-container">
-                <a href="index.html"><button>Home</button></a>
-                <a href="multimedia.html"><button>Multimedia</button></a>
-                <a href="info.html"><button>Info</button></a>
-            </nav>
-                <h2>Lisboa</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99579.41434231242!2d-9.24213785363509!3d38.74405052621307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a61e4f33b%3A0x400ebbde49036d0!2sLisboa!5e0!3m2!1spt-PT!2spt!4v1758694093005!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-            
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local</title>
+    <link rel="stylesheet" href="Styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Meu local</h1>
+      <nav class="flex-container" aria-label="Navegação principal">
+        <a href="index.html"><button type="button">Home</button></a>
+        <a href="local.html" aria-current="page"><button type="button">Local</button></a>
+        <a href="multimedia.html"><button type="button">Multimédia</button></a>
+        <a href="info.html"><button type="button">Info</button></a>
+      </nav>
+    </header>
+    <main>
+      <section class="content-section">
+        <h2>Lisboa</h2>
+        <p>O mapa mostra a localização de Lisboa em Portugal.</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99579.41434231242!2d-9.24213785363509!3d38.74405052621307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a61e4f33b%3A0x400ebbde49036d0!2sLisboa!5e0!3m2!1spt-PT!2spt!4v1758694093005!5m2!1spt-PT!2spt"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa da cidade de Lisboa"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>DIW 2025</p>
+    </footer>
+  </body>
 </html>

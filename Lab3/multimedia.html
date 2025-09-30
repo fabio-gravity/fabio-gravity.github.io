@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>multimedia</title>
-        <link rel="stylesheet" href="Styles.css" />
-    </head>
-    <body>
-        <header>
-            <h1>multimedia </h1>
-        </header>
-        <main>
-               <nav class="flex-container">
-                <a href="index.html"><button>Home</button></a>
-                <a href="local.html"><button>Local</button></a>
-                <a href="info.html"><button>Info</button></a>
-            </nav>
-            <h2>Fotografias</h2>
-            <div>
-                <img src="../imagen/lisboa1.jpg" alt="Lisboa1" width="120" height="80">
-                <img src="../imagen/lisboa2.webp" alt="Lisboa2" width="120" height="80">
-                <img src="../imagen/lisboa3.jpg" alt="Lisboa3" width="120" height="80">
-                <img src="../imagen/lisboa3.webp" alt="Lisboa4" width="120" height="80">
-                <img src="../imagen/lisboa4.webp" alt="Lisboa5" width="120" height="80">
-                <img src="../imagen/lisboa5.webp" alt="Lisboa6" width="120" height="80">
-                <img src="../imagen/lisboa6.webp" alt="Lisboa7" width="120" height="80">
-                <img src="../imagen/lisboa7.webp" alt="Lisboa8" width="120" height="80">
-                <img src="../imagen/lisboa8.jpg" alt="Lisboa9" width="120" height="80">
-            </div>
-            
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia</title>
+    <link rel="stylesheet" href="Styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Multimédia</h1>
+      <nav class="flex-container" aria-label="Navegação principal">
+        <a href="index.html"><button type="button">Home</button></a>
+        <a href="local.html"><button type="button">Local</button></a>
+        <a href="multimedia.html" aria-current="page"><button type="button">Multimédia</button></a>
+        <a href="info.html"><button type="button">Info</button></a>
+      </nav>
+    </header>
+    <main>
+      <section class="content-section">
+        <h2>Fotografias</h2>
+        <p>Alguns registos visuais de Lisboa usando apenas as imagens do projeto.</p>
+        <div class="gallery" role="list">
+          <figure role="listitem">
+            <img src="../imagen/lisboa1.jpg" alt="Vista do elétrico amarelo em Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Elétrico clássico</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa2.webp" alt="Ponte 25 de Abril iluminada" width="120" height="80" loading="lazy" />
+            <figcaption>Ponte 25 de Abril</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa3.jpg" alt="Vista aérea de Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Vista aérea</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa3.webp" alt="Bairro tradicional de Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Bairro típico</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa4.webp" alt="Padrão dos Descobrimentos" width="120" height="80" loading="lazy" />
+            <figcaption>Belém</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa5.webp" alt="Praça do Comércio ao pôr do sol" width="120" height="80" loading="lazy" />
+            <figcaption>Praça do Comércio</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa6.webp" alt="Detalhe de azulejos em Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Azulejos</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa7.webp" alt="Miradouro com vista para Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Miradouro</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="../imagen/lisboa8.jpg" alt="Vista noturna de Lisboa" width="120" height="80" loading="lazy" />
+            <figcaption>Noite em Lisboa</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>DIW 2025</p>
+    </footer>
+  </body>
 </html>
