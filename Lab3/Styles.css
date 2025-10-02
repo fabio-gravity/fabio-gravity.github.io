@@ -177,7 +177,7 @@ table th {
   background-color: rgba(23, 55, 83, 0.05);
 }
 
-/* 13) Listes */
+
 ul {
   margin: 0;
   padding-left: 20px;
@@ -186,7 +186,6 @@ ul {
   line-height: 1.6;
 }
 
-/* 14) Galerie d’images */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
