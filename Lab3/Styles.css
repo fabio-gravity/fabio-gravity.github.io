@@ -1,247 +1,238 @@
+/* 1) Variables de thème */
 :root {
-    --primary: #173753;
-    --accent: #f1b722;
-    --light: #f6f8fb;
-    --text: #1b1b1b;
+  --primary: #173753;
+  --accent:  #f1b722;
+  --light:   #f6f8fb;
+  --text:    #1b1b1b;
 }
 
+/* 2) Reset & base */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: grey;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-             font-style: italic;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px;
-        }
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--light);
-    color: var(--text);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--light);
+  color: var(--text);
 }
 
+/* 3) Page shell */
 .page {
-    min-height: 100vh;
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* 4) Header */
 header {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 24px 24px 8px;
-    text-align: center;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 24px 24px 8px;
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-style: italic;
-    letter-spacing: 1px;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
+/* 5) Nav en flex */
 .flex-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
 }
 
+/* Si tu veux “annuler” une limite ailleurs */
 .flex-container a {
-    text-decoration: none;
-    flex: 1 1 140px;
-    max-width: 200px;
+  text-decoration: none;
+  flex: 1 1 140px;
+  max-width: 200px; /* mets none si tu veux vraiment aucune limite */
 }
 
 .flex-container button {
-    width: 100%;
-    background-color: #fff;
-    border: 2px solid transparent;
-    padding: 10px 18px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--primary);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid transparent;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
+/* État actif + hover */
 .flex-container a[aria-current="page"] button,
 .flex-container button:hover {
-    background-color: var(--accent);
-    border-color: var(--primary);
-    color: var(--text);
+  background-color: var(--accent);
+  border-color: var(--primary);
+  color: var(--text);
 }
 
+/* 6) Main */
 main {
-    flex: 1;
-    padding: 32px 24px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: left;
+  flex: 1;
+  padding: 32px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: left;
 }
 
+/* 7) Titres de section */
 section h2,
 section h3 {
-    margin-top: 0;
-    color: var(--primary);
+  margin-top: 0;
+  color: var(--primary);
 }
 
+/* 8) Intro */
 .intro {
-    text-align: center;
-    display: grid;
-    gap: 12px;
+  text-align: center;
+  display: grid;
+  gap: 12px;
 }
 
 .intro p {
-    margin: 0 auto;
-    max-width: 620px;
-    line-height: 1.6;
+  margin: 0 auto;
+  max-width: 620px;
+  line-height: 1.6;
 }
 
+/* 9) Highlights (cartes responsives) */
 .highlights {
-    display: grid;
-    gap: 24px;
+  display: grid;
+  gap: 24px;
 }
 
 .highlights .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 .highlights .cards div {
-    border: 1px solid rgba(23, 55, 83, 0.15);
-    border-radius: 16px;
-    padding: 20px;
-    background: linear-gradient(145deg, rgba(23, 55, 83, 0.05), rgba(241, 183, 34, 0.1));
-    box-shadow: inset 0 0 0 1px rgba(23, 55, 83, 0.05);
+  border: 1px solid rgba(23, 55, 83, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(145deg, rgba(23, 55, 83, 0.05), rgba(241, 183, 34, 0.1));
+  box-shadow: inset 0 0 0 1px rgba(23, 55, 83, 0.05);
 }
 
 .highlights .cards div p:first-child {
-    margin-bottom: 6px;
-    font-weight: 700;
-    color: var(--primary);
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--primary);
 }
 
+/* 10) Grilles simples */
 .map,
 .info,
 .gallery-section {
-    display: grid;
-    gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 .map p,
 .info p,
 .gallery-section p {
-    margin: 0;
-    line-height: 1.6;
+  margin: 0;
+  line-height: 1.6;
 }
 
+/* 11) Iframe stylé */
 iframe {
-    width: 100%;
-    min-height: 380px;
-    border: 0;
-    border-radius: 16px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* 12) Table */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 table th,
 table td {
-    padding: 14px 18px;
-    border: 1px solid rgba(23, 55, 83, 0.1);
-    text-align: left;
+  padding: 14px 18px;
+  border: 1px solid rgba(23, 55, 83, 0.1);
+  text-align: left;
 }
 
 table th {
-    background-color: rgba(23, 55, 83, 0.05);
+  background-color: rgba(23, 55, 83, 0.05);
 }
 
+/* 13) Listes */
 ul {
-    margin: 0;
-    padding-left: 20px;
-    display: grid;
-    gap: 8px;
-    line-height: 1.6;
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  line-height: 1.6;
 }
 
+/* 14) Galerie d’images */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
 }
 
 .gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid rgba(23, 55, 83, 0.15);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(23, 55, 83, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
+/* 15) Footer */
 footer {
-    background-color: var(--primary);
-    color: #fff;
-    text-align: center;
-    padding: 18px 24px;
+  background-color: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 18px 24px;
 }
 
+/* 16) Media Query (fermé correctement) */
 @media (max-width: 640px) {
-    header {
-        padding: 20px 16px 12px;
-    }
+  header {
+    padding: 20px 16px 12px;
+  }
 
-    .flex-container {
-        gap: 10px;
-    }
+  .flex-container a {
+    max-width: none; /* si tu veux que les boutons occupent toute la ligne */
+  }
 
-    .flex-container a {
-        max-width: none;
-    }
+  main {
+    padding: 28px 16px 32px;
+    gap: 32px;
+  }
 
-    main {
-        padding: 28px 16px 32px;
-        gap: 32px;
-    }
-
-    iframe {
-        min-height: 300px;
-    }
+  iframe {
+    min-height: 300px;
+  }
 }
