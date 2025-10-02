@@ -1,90 +1,265 @@
- body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-style: italic;
-            position: sticky;
-        
-        }
-        h2{
-            text-align: center;
-            font-style: italic;
-        }
-        section:nth-child(1){
-            background-image: url("../imagen/fotomoiia.jpg");
-            background-size: cover;
-            text-align: center;
-            min-height: 200vh;
-            display: flex;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px;
-        }
+/* Base d'origine */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-        nav a {
-            text-decoration: none;
-            margin: 0 7px;
-        }
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-style: italic;
+    position: sticky;
+}
 
-        nav button {
-            background-color: gray;
-            color: white;
-            border: none;
-            padding: 20px 32px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+h2 {
+    text-align: center;
+    font-style: italic;
+}
 
-        nav button:hover {
-            background-color: #0056b3;
-        }
+section:nth-child(1) {
+    background-image: url("../imagen/fotomoiia.jpg");
+    background-size: cover;
+    text-align: center;
+    min-height: 200vh;
+    display: flex;
+}
 
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        section:nth-child(2){
-            background-color: #ccc;
-            background-size: cover;
-            text-align: center;
-            container-type: inline-size;
-            min-height: 100vh;
-            display: flex;
-            
-        }
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-        }
-        .container button {
-            background-color: burlywood;
-            color: white;
-            border: none;
-            padding: 45px 84px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+nav button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 20px 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section:nth-child(2) {
+    background-color: #ccc;
+    background-size: cover;
+    text-align: center;
+    container-type: inline-size;
+    min-height: 100vh;
+    display: flex;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.container button {
+    background-color: burlywood;
+    color: white;
+    border: none;
+    padding: 45px 84px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* ---------- Version sans :root (variables supprimées) ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* remplace font-family: inherit (venant de :root) */
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8fafc;
+    color: #0f172a; /* --text-color */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.65);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.brand {
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.main-nav a {
+    color: #e2e8f0;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #38bdf8;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0ea5e9 100%); /* --bg-gradient */
+    color: #f8fafc;
+    padding: 6rem 0 5rem;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    color: rgba(226, 232, 240, 0.85);
+    max-width: 32rem;
+    margin-bottom: 1.8rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(226, 232, 240, 0.7);
+    margin-bottom: 0.8rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn.primary {
+    background: #f8fafc;
+    color: #0284c7; /* --accent-dark */
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.35);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(14, 165, 233, 0.45);
+}
+
+.btn.secondary {
+    background: #0ea5e9; /* --accent-color */
+    color: #f8fafc;
+}
+
+.btn.secondary:hover {
+    background: #0284c7; /* --accent-dark */
+    transform: translateY(-2px);
+}
+
+.btn.ghost {
+    border: 1px solid rgba(248, 250, 252, 0.6);
+    color: #f8fafc;
+}
+
+.btn.ghost:hover {
+    background: rgba(15, 23, 42, 0.25);
+    transform: translateY(-2px);
+}
+
+.hero-portrait {
+    min-height: 320px;
+    border-radius: 28px;
+    background: url('imagen/fotomoiia.jpg') center/cover no-repeat,
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.35), transparent 55%);
+    box-shadow: 0 25px 70px rgba(15, 23, 42, 0.35);
+    position: relative;
+}
+
+.hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 1.2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(248, 250, 252, 0.4);
+}
+
+main section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-al

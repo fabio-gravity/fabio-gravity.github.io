@@ -1,53 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabio Dos Santos Farhat</title>
      <link rel="stylesheet" href="Styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    <header>
-        <nav class="flex-container">
-                <a href="https://www.bing.com/search?q=html&cvid=90571ef28d6f4b77bee941d489ac121a&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRBFGDwyBggGEEUYPDIGCAcQRRhBMgYICBBFGEHSAQgyODAzajBqNKgCCLACAQ&FORM=ANAB01&PC=HCTS">
-                    <button>Html</button>
-                </a>
-                <a href="https://en.wikipedia.org/wiki/CSS">
-                    <BUtton>CSS</BUtton>
-                </a>
-                <a href="https://en.wikipedia.org/wiki/JavaScript">
-                    <button>JavaScript</button>
-                </a>
-            
-        </nav>
-    </header>
-    <main>
-      <section><h2>Bem vindo <br>Eu sou Fabio Dos Santos Farhat<br></h2>
-    </section>
-      <section>
-        <h2>Meus laboratórios</h2>
-        <div class="container">
-            <a href="Lab1/index.html">
-                    <button>Laboratorio1</button>
-                </a>
-                <a href="Lab2/index.html">
-                    <button>Laboratorio2</button>
-                </a>  
-                <a href="Lab3/index.html">
-                    <button>Laboratorio3</button>
-                </a>
+    <header class="site-header">
+        <div class="wrapper header-content">
+            <a class="brand" href="#inicio">Fabio Farhat</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#laboratorios">Laboratórios</a></li>
+                    <li><a href="#interfaces">Interfaces Web</a></li>
+                </ul>
+            </nav>
         </div>
-          
-        </div>            
-      </section>
-      <section>
-       <p></p>
-      </section>         
+    </header>
+   <main> 
+        <section id="inicio" class="hero">
+            <div class="wrapper hero-content">
+                <div class="hero-text">
+                    <span class="eyebrow">Olá, eu sou</span>
+                    <h1>Fabio Dos Santos Farhat</h1>
+                    <p>
+                        Estudante da Universidade Lusófona, apaixonado por tecnologia, interfaces e experiências digitais
+                        cativantes. Conheça os meus trabalhos e acompanhe a minha jornada de aprendizagem.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#laboratorios">Explorar laboratórios</a>
+                        <a class="btn ghost" href="mailto:fabio.farhat@example.com">Contactar</a>
+                    </div>
+                </div>
+                <div class="hero-portrait" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section id="laboratorios" class="labs">
+            <div class="wrapper">
+                <header class="section-header">
+                    <span class="eyebrow">Portefólio académico</span>
+                    <h2>Laboratórios em destaque</h2>
+                    <p>Projetos desenvolvidos ao longo do curso, com foco em práticas modernas de desenvolvimento web.</p>
+                </header>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Laboratório 1</h3>
+                        <p>Introdução aos fundamentos da Web, estrutura básica de páginas e boas práticas semânticas.</p>
+                        <a class="btn secondary" href="Lab1/index.html">Ver projeto</a>
+                    </article>
+                    <article class="card">
+                        <h3>Laboratório 2</h3>
+                        <p>Exploração de estilos e layouts responsivos utilizando CSS moderno e componentes reutilizáveis.</p>
+                        <a class="btn secondary" href="Lab2/index.html">Ver projeto</a>
+                    </article>
+                    <article class="card">
+                        <h3>Laboratório 3</h3>
+                        <p>Integração de JavaScript para criar experiências dinâmicas e interativas na Web.</p>
+                        <a class="btn secondary" href="Lab3/index.html">Ver projeto</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="interfaces" class="interfaces">
+            <div class="wrapper">
+                <header class="section-header">
+                    <h2>Interfaces Web</h2>
+                    <p>
+                        Na Unidade Curricular de
+                        <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232" target="_blank" rel="noopener">
+                            Desenvolvimento de Interfaces Web
+                        </a>
+                        abordaremos as seguintes tecnologias Web 🌐:
+                    </p>
+                </header>
+                <ul class="tech-list">
+                    <li><span class="html-color">HTML</span></li>
+                    <li><span class="css-color">CSS</span></li>
+                    <li><span class="js-color">JavaScript</span></li>
+                    <li><span class="react-color">React e Next.js</span></li>
+                </ul>
+            </div>
+        </section>
     </main>
     <footer>
         Fabio Dos Santos Farhat --Universidade lusofona
 
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; <span id="year"></span> Fabio Dos Santos Farhat — Universidade Lusófona.</p>
+        </div>
     </footer>
     
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+</html>
 </html>
