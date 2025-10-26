@@ -1,0 +1,42 @@
+body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+
+    header, footer {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #008cba;
+      color: white;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #005f75;
+    }
+
+    img {
+      width: 200px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    #coords {
+      margin-top: 20px;
+      color: #333;
+    }
