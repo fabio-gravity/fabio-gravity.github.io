@@ -1,0 +1,47 @@
+:root{
+  --bg:#0f1115; --panel:#151924; --ink:#e7ecff; --muted:#9fb0d0;
+  --line:#24304e; --brand:#6ea8fe; --accent:#58d38c;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink); background:var(--bg);
+}
+.skip{position:absolute;left:-9999px;top:auto;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.5rem}
+.skip:focus{left:1rem;top:1rem;z-index:10}
+
+header,main,footer{max-width:1200px;margin-inline:auto;padding-inline:1rem}
+header{padding-block:1rem}
+nav ul{display:flex;gap:.75rem;list-style:none;margin:.5rem 0 0;padding:0}
+nav a{color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:.4rem .7rem;border-radius:999px}
+nav a:hover{background:#10162a}
+
+main{display:grid;grid-template-columns:1fr minmax(260px,340px);gap:1rem;align-items:start;padding-bottom:2rem}
+@media (max-width:860px){main{grid-template-columns:1fr} aside{order:-1}}
+
+section,aside{background:var(--panel);border:1px solid var(--line);border-radius:1rem}
+section>header,aside>header{padding:.8rem 1rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+
+#form-controles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:.5rem}
+fieldset{border:1px solid var(--line);border-radius:.75rem;padding:.5rem .75rem}
+legend{font-size:.9rem;color:var(--muted)}
+
+#lista-produtos{display:flex;flex-wrap:wrap;gap:1rem;padding:1rem;min-height:6rem}
+#lista-cesto{display:flex;flex-direction:column;gap:.75rem;padding:1rem;min-height:6rem}
+.vazio{color:var(--muted);font-style:italic}
+
+article.produto{
+  width:clamp(240px,31%,360px);background:#0f1426;border:1px solid var(--line);
+  border-radius:.9rem;overflow:hidden;display:flex;flex-direction:column
+}
+article.produto figure{margin:0;background:#0b1020}
+article.produto img{width:100%;height:180px;object-fit:contain}
+article.produto header{padding:.75rem 1rem 0}
+article.produto h3{margin:.1rem 0;font-size:1rem}
+article.produto .descricao{margin:.25rem 1rem;color:var(--muted)}
+article.produto .preco{margin:.25rem 1rem;font-weight:700;color:var(--accent)}
+article.produto footer{margin-top:auto;padding:0 1rem 1rem}
+button{border:1px solid var(--line);background:#111831;color:var(--ink);padding:.55rem .8rem;border-radius:.6rem;cursor:pointer}
+button:hover{border-color:var(--brand)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

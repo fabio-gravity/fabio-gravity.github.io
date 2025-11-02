@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEISI Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header>
+    <h1>DEISI Shop</h1>
+
+    <form id="form-controles" role="search" aria-label="Filtrar e procurar produtos">
+      <fieldset>
+        <legend>Filtrar</legend>
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria">
+          <option value="">Todas</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Ordenar</legend>
+        <label for="ordem">Preço</label>
+        <select id="ordem" name="ordem">
+          <option value="">Sem ordenação</option>
+          <option value="asc">Menor → Maior</option>
+          <option value="desc">Maior → Menor</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pesquisa</legend>
+        <label for="q" class="sr-only">Pesquisar por nome</label>
+        <input id="q" name="q" type="search" placeholder="Procurar produto…" autocomplete="off">
+      </fieldset>
+    </form>
+
+    <nav aria-label="Secções">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+  
+    <section id="produtos" aria-labelledby="titulo-produtos">
+      <header><h2 id="titulo-produtos">Produtos</h2></header>
+      <section id="lista-produtos" aria-live="polite">
+        <p class="vazio">A carregar produtos…</p>
+      </section>
+    </section>
+    <aside id="cesto" aria-labelledby="titulo-cesto">
+      <header>
+        <h2 id="titulo-cesto">Cesto</h2>
+        <output id="total">Total: 0,00 €</output>
+      </header>
+      <section id="lista-cesto" aria-live="polite">
+        <p class="vazio">Ainda não adicionou produtos.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Exemplo académico — HTML5 + Fetch (AJAX) + Flex/Grid.</p>
+  </footer>
+
+  <template id="tpl-produto">
+    <article class="produto">
+      <figure>
+        <img src="" alt="Imagem do produto" loading="lazy">
+        <figcaption class="sr-only">Imagem do produto</figcaption>
+      </figure>
+      <header><h3 class="titulo"></h3></header>
+      <p class="descricao"></p>
+      <p class="preco"></p>
+      <footer>
+        <button type="button" data-acao="add">+ Adicionar ao cesto</button>
+      </footer>
+    </article>
+  </template>
+
+
+  <script src="Main.js"></script>
+</body>
+</html>

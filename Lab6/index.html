@@ -1,143 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demo – Interações JS</title>
-  <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
-    .row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin: 12px 0; }
-    button { padding:8px 12px; cursor:pointer; }
-    #primeiro, #segundo { padding:10px 14px; border:1px solid #ddd; border-radius:8px; }
-    #primeiro { background:#f7f7f7; }
-    .pill { border-radius:999px; }
-    select, input { padding:8px 10px; }
-    .card { border:1px solid #e5e5e5; border-radius:12px; padding:14px; margin:12px 0; }
-  </style>
+  <title>DEISI Shop</title>
+   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-  <h1>Demo das interações</h1>
+  <header role="banner">
+    <h1>DEISI Shop</h1>
 
-  <!-- 1) Texto que muda ao passar o rato -->
-  <div class="card">
-    <div id="primeiro">1. passa por aqui</div>
-  </div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+        <li><a href="#contactos">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- 2) Botões que mudam a cor do #segundo -->
-  <div class="card">
-    <div id="segundo">2. clica para mudar a cor deste texto</div>
-    <div class="row">
-      <button id="vermelho" class="pill">Vermelho</button>
-      <button id="azul" class="pill">Azul</button>
-      <button id="verde" class="pill">Verde</button>
-      <button id="preto" class="pill">Preto</button>
-    </div>
-  </div>
+  <main id="conteudo">
+   
+    <section id="produtos" aria-labelledby="titulo-produtos">
+      <header>
+        <h2 id="titulo-produtos">Produtos</h2>
+        <form role="search" aria-label="Procurar produtos">
+          <label class="sr-only" for="q">Pesquisar</label>
+          <input id="q" name="q" type="search" placeholder="Procurar…" />
+          <button type="submit">OK</button>
+        </form>
+      </header>
 
-  <!-- 3) Select que muda o background (guardado no localStorage) -->
-  <div class="card">
-    <label for="cor"><strong>3. Escolhe a cor do fundo:</strong></label>
-    <select id="cor">
-      <option value="">— escolhe —</option>
-      <option value="white">White</option>
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-      <option value="green">Green</option>
-      <option value="#f5f5f5">Cinza claro</option>
-    </select>
-  </div>
+      
+      <section id="lista-produtos" aria-live="polite" aria-busy="false">
+        <p class="vazio">Os produtos serão apresentados aqui.</p>
+      </section>
+    </section>
 
-  <!-- 4) Contador ao clicar -->
-  <div class="card">
-    <div class="row">
-      <button id="btncontar">Contar +1</button>
-      <div>Valor: <strong id="conta">0</strong></div>
-    </div>
-  </div>
+   
+    <aside id="cesto" aria-labelledby="titulo-cesto">
+      <header>
+        <h2 id="titulo-cesto">Cesto</h2>
+        <output id="total" aria-live="polite">Total: 0,00 €</output>
+      </header>
+      <section id="lista-cesto" aria-live="polite" aria-busy="false">
+        <p class="vazio">Ainda não adicionou produtos.</p>
+      </section>
+    </aside>
+  </main>
 
-  <!-- 5) Mensagem nome + idade -->
-  <div class="card">
-    <div class="row">
-      <input id="nome" type="text" placeholder="Nome" />
-      <input id="idade" type="number" placeholder="Idade" min="0" />
-      <button id="btnsub">Mostrar</button>
-    </div>
-    <h2 id="test">Olá!</h2>
-  </div>
+  <footer id="contactos">
+    <p><strong>DEISI Shop</strong> — Projeto de exemplo. Feito com HTML5 semântico, Grid e Flex.</p>
+    <address>
+      Contacto: <a href="mailto:loja@deisi.com">loja@example.com</a>
+    </address>
+  </footer>
 
-  <!-- 6) Contador por segundo -->
-  <div class="card">
-    <strong>Compteur (par seconde): </strong>
-    <span id="comptador">0</span>
-  </div>
+  <template id="tpl-produto">
+    <article class="produto">
+      <figure>
+        <img src="" alt="Imagem do produto" loading="lazy" />
+      </figure>
+      <header>
+        <h3>Título do produto</h3>
+      </header>
+      <p class="price">0,00 €</p>
+      <footer>
+        <button type="button" data-acao="adicionar">Adicionar ao cesto</button>
+        <button type="button" data-acao="detalhes">Detalhes</button>
+      </footer>
+    </article>
+  </template>
 
-  <script>
-    // 1) Hover no "primeiro"
-    const primeiro = document.getElementById("primeiro");
-    primeiro.addEventListener("mouseover", function () {
-      primeiro.textContent = "OBRIGADO POR PASSARES!";
-    });
-    primeiro.addEventListener("mouseout", function () {
-      primeiro.textContent = "1. passa por aqui";
-    });
+ <script src="produtos.js"></script>
+<script src="Main.js"></script>
 
-    // 2) Botões que mudam a cor do #segundo
-    const segundo = document.getElementById("segundo");
-    const vermelho = document.getElementById("vermelho");
-    const azul = document.getElementById("azul");
-    const verde = document.getElementById("verde");
-    const preto = document.getElementById("preto");
-    vermelho.addEventListener("click", function(){ segundo.style.color = "red"; });
-    azul.addEventListener("click", function(){ segundo.style.color = "blue"; });
-    verde.addEventListener("click", function(){ segundo.style.color = "green"; });
-    preto.addEventListener("click", function(){ segundo.style.color = "black"; });
-
-    // 3) Select que muda o background + localStorage
-    const inputCor = document.getElementById("cor");
-    const savedColor = localStorage.getItem("backgroundColor");
-    if (savedColor) {
-      document.body.style.backgroundColor = savedColor;
-      inputCor.value = savedColor;
-    }
-    inputCor.addEventListener("change", function () {
-      const cor = inputCor.value;
-      if (cor) {
-        document.body.style.backgroundColor = cor;
-        localStorage.setItem("backgroundColor", cor);
-      }
-    });
-
-    // 4) Contador ao clicar
-    let count = 0;
-    const conta = document.getElementById("conta");
-    const btncontar = document.getElementById("btncontar");
-    btncontar.addEventListener("click", function () {
-      count++;
-      conta.textContent = count;
-    });
-
-    // 5) Mensagem nome + idade
-    const nome = document.getElementById("nome");
-    const idade = document.getElementById("idade");
-    const h2 = document.getElementById("test");
-    document.getElementById("btnsub").addEventListener("click", function () {
-      const a = nome.value.trim();
-      const b = idade.value.trim();
-      if (!a || !b) {
-        h2.textContent = "Preenche o nome e a idade 🙂";
-        return;
-        }
-      h2.textContent = `Olá, o ${a} tem ${b} anos!`;
-    });
-
-    // 6) Compteur por segundo
-    let comptado = 0;
-    const affichagem = document.getElementById("comptador");
-    setInterval(() => {
-      comptado++;
-      affichagem.textContent = comptado;
-    }, 1000);
-  </script>
 </body>
 </html>
